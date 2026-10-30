@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e1426">
+    <meta name="description" content="Run the night in Lawrence Sprint, a neon-soaked endless runner. Jump, double-jump, and collect shards.">
+    <title>Lawrence Sprint — Endless Runner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Lawrence Sprint">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <span>LAWRENCE<span class="brand-light"> SPRINT</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span class="topbar-label">NIGHT RUN // 01</span>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="game-title">
+        <p class="eyebrow"><span></span> YOUR CITY. YOUR PACE. NO FINISH LINE.</p>
+        <h1 id="game-title">Own the <span>night.</span></h1>
+        <p class="intro-copy">Run the rooftops, chain your jumps, and turn every shard into a new personal best.</p>
+      </section>
+
+      <section class="game-card" aria-label="Endless runner game">
+        <div class="game-hud">
+          <div class="hud-stat">
+            <span class="hud-label">DISTANCE</span>
+            <span class="hud-value"><span id="score">00000</span><small>m</small></span>
+          </div>
+          <div class="hud-center" aria-live="polite">
+            <span class="level-pill"><span class="level-dot"></span><span id="status-label">READY</span></span>
+          </div>
+          <div class="hud-stat hud-stat-right">
+            <span class="hud-label">SHARDS</span>
+            <span class="hud-value shard-value"><span class="shard-icon" aria-hidden="true">✦</span><span id="shards">00</span></span>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game" aria-label="Game scene. Press Space, Arrow Up, W, or tap to jump. Jump again in the air to double-jump." role="img"></canvas>
+          <div class="game-overlay" id="game-overlay">
+            <div class="overlay-content">
+              <span class="overlay-kicker" id="overlay-kicker">LAWRENCE SPRINT // AFTER DARK</span>
+              <h2 id="overlay-title">Ready to<br><span>run wild?</span></h2>
+              <p id="overlay-copy">Jump the gaps. Double-jump in the air. Make this run yours.</p>
+              <button class="play-button" id="play-button" type="button">
+                <span id="button-label">Start running</span><span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+              <span class="overlay-hint" id="overlay-hint">SPACE / ↑ TO JUMP · AGAIN TO DOUBLE-JUMP</span>
+            </div>
+          </div>
+          <div class="shield-indicator" id="shield-indicator" aria-live="polite" hidden>
+            <span aria-hidden="true">✦</span> SHIELD ACTIVE
+          </div>
+          <div class="canvas-vignette" aria-hidden="true"></div>
+        </div>
+
+        <div class="game-footer">
+          <div class="best-score"><span class="trophy" aria-hidden="true">✧</span> BEST <span id="best-score">00000</span><span class="footer-divider">/</span><span class="footer-note">PERSONAL RECORD</span></div>
+          <div class="footer-actions">
+            <button class="pause-button" id="pause-button" type="button" aria-label="Pause game" disabled><span aria-hidden="true">Ⅱ</span> <span id="pause-label">PAUSE</span></button>
+            <div class="control-hint"><kbd>SPACE</kbd><span>or</span><kbd>↑</kbd><span>JUMP · AGAIN IN AIR TO DOUBLE-JUMP</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>LAWRENCE SPRINT / EST. AFTER DARK</span>
+        <span class="footer-sparkle" aria-hidden="true">✳</span>
+        <span>STAY IN MOTION <span class="footer-arrow" aria-hidden="true">↗</span></span>
+      </footer>
+      <button class="mobile-jump" id="mobile-jump" type="button" aria-label="Jump. Tap again in the air to double-jump">JUMP <span aria-hidden="true">↑↑</span></button>
+    </main>
+  </body>
+</html>
